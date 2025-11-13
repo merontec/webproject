@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation - BK Restaurant</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .main-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .reservation-container {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reservation-content {
+            width: 100%;
+            max-width: 800px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .reservation-title {
+            text-align: center;
+            color: #ffd700;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .reservation-form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        label {
+            display: block;
+            color: #fff;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ffd700;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #fdf8f8;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            border-color: #312f2f;
+            color: #000;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            grid-column: span 2;
+            background: #ffd700;
+            color: #000;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .reservation-form {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            .submit-btn {
+                grid-column: span 1;
+            }
+        }
+
+        /* Time slots grid */
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .time-slot {
+            padding: 8px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #ffd700;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .time-slot:hover {
+            background: rgba(255, 215, 0, 0.3);
+        }
+
+        .time-slot.selected {
+            background: #ffd700;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="box1">
+            <a href="../resturant.html" class="box11">Home</a>
+            <a href="../css/menu.html" class="box11">Menu</a>
+            <a href="about.html" class="box11">About Us</a>
+            <a href="reservation.html" class="box11">Reservation</a>
+            <a href="location.html" class="box11">Location</a>
+            <a href="contact.html" class="box11">Contact Us</a>
+        </div>
+
+        <div class="reservation-container">
+            <div class="reservation-content">
+                <h1 class="reservation-title">Make a Reservation</h1>
+                <form class="reservation-form" id="reservationForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Select number of guests</option>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6">6 People</option>
+                            <option value="7+">7+ People</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Time</label>
+                        <div class="time-slots">
+                            <div class="time-slot" data-time="17:00">5:00 PM</div>
+                            <div class="time-slot" data-time="17:30">5:30 PM</div>
+                            <div class="time-slot" data-time="18:00">6:00 PM</div>
+                            <div class="time-slot" data-time="18:30">6:30 PM</div>
+                            <div class="time-slot" data-time="19:00">7:00 PM</div>
+                            <div class="time-slot" data-time="19:30">7:30 PM</div>
+                            <div class="time-slot" data-time="20:00">8:00 PM</div>
+                            <div class="time-slot" data-time="20:30">8:30 PM</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="special-requests">Special Requests</label>
+                        <textarea id="special-requests" name="special-requests" placeholder="Any special requests, dietary requirements, or preferred seating?"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Book Table</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

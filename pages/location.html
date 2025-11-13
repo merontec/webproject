@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location - BK Restaurant</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .main-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .location-container {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .location-content {
+            width: 100%;
+            max-width: 1000px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            color: #fff;
+        }
+
+        .location-title {
+            text-align: center;
+            color: #ffd700;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .location-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .info-section {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .info-section h2 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .info-section p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+
+        .hours-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .location-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="box1">
+            <a href="../resturant.html" class="box11">Home</a>
+            <a href="../css/menu.html" class="box11">Menu</a>
+            <a href="about.html" class="box11">About Us</a>
+            <a href="reservation.html" class="box11">Reservation</a>
+            <a href="location.html" class="box11">Location</a>
+            <a href="contact.html" class="box11">Contact Us</a>
+        </div>
+
+        <div class="location-container">
+            <div class="location-content">
+                <h1 class="location-title">Find Us</h1>
+                <div class="location-info">
+                    <div class="info-section">
+                        <h2>Address</h2>
+                        <p>123 Gaba road</p>
+                        <p>Kampala, uagand</p>
+                        <p>Postal Code: 10100</p>
+                        
+                        <h2>Opening Hours</h2>
+                        <ul class="hours-list">
+                            <li><span>Monday - Thursday</span> <span>11:00 AM - 10:00 PM</span></li>
+                            <li><span>Friday - Saturday</span> <span>11:00 AM - 11:00 PM</span></li>
+                            <li><span>Sunday</span> <span>12:00 PM - 9:00 PM</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Getting Here</h2>
+                        <p><strong>By Car:</strong> Convenient parking available in our private lot</p>
+                        <p><strong>By Bus:</strong>  102 stop directly in front</p>
+                        <p><strong>By boda:</strong> stop in the get</p>
+                        
+                        <h2>Parking</h2>
+                        <p>Free parking available for restaurant guests</p>
+                        <p>Valet parking available on weekends</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
